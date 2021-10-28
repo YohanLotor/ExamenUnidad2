@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    
+    var estatus = []; //Para almacenar als reservaciones
+    
+
+    reservacion();
+
+
+
+    function reservacion() {
+    let opcion1;
+        
+            let reservaciones = prompt("Cuantas reservaciones va a querer? ");
+            for(let j=0;j<=reservaciones.length;j++){
+                alert("quioña");
+                let ingresaNombre = prompt("Ingresa El Nombre del reservante " + [j]);
+                let ingresaFecha = prompt("Ingresa la fecha del reservante " + [j]);
+                let Estatus = prompt("Ingresa la mesa " + [j]);
+            
+                let disponible = false;
+                for(let i = 0; i<estatus.length;i++){
+                    if(estatus[i] == Estatus){
+                    disponible = true;
+                    console.log("Esta reservacion ya existe")
+                    }
+                }
+                if(disponible == false){
+                    estatus.push(Estatus)
+                    console.log("Tu reservacion a sido registrada");
+                }
+
+            }
+        
+            
+           
+       
+    }
+
+</script>
+</html>
