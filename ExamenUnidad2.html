@@ -10,42 +10,209 @@
     
 </body>
 <script type="text/javascript">
+
+    //Declaracion de variables
+    var reservasion = [];
+    var Almacenamiento = [];
+    var sinMesa = [];
+    var mesa1 = [];
+    var mesa2 = [];
+    var mesa3 = [];
+    var mesa4 = [];
+    var mesa5 = [];
+    var mesa6 = []; 
+ 
     
-    var estatus = []; //Para almacenar als reservaciones
-    
-
-    reservacion();
-
-
-
-    function reservacion() {
-    let opcion1;
-        
-            let reservaciones = prompt("Cuantas reservaciones va a querer? ");
-            for(let j=0;j<=reservaciones.length;j++){
-                alert("quioña");
-                let ingresaNombre = prompt("Ingresa El Nombre del reservante " + [j]);
-                let ingresaFecha = prompt("Ingresa la fecha del reservante " + [j]);
-                let Estatus = prompt("Ingresa la mesa " + [j]);
+    //Funcion para registrar los datos de la reservacion
+    function Registro(){
+        if(num_reservasiones <= 6){        
+        for(let i=0;i < num_reservasiones;i++){
+            let nombre = prompt("Favor de ingresar el nombre del reservante");
+            let fecha = prompt("Favor de reistrar la fecha de la reservacion");
+            let mesa = ("Mesa "+ (i + 1));
+            reservasion=[nombre,fecha,mesa];
+            Almacenamiento.push(reservasion);
+                if (mesa == "Mesa 1")
+                {
+                    mesa1.push(reservasion);
+                }
+                if(mesa == "Mesa 2")
+                {
+                    mesa2.push(reservasion);
+                }
+                if(mesa == "Mesa 3")
+                {
+                    mesa3.push(reservasion);
+                }
+                if (mesa == "Mesa 4")
+                {
+                    mesa4.push(reservasion);
+                }
+                if(mesa == "Mesa 5")
+                {
+                    mesa5.push(reservasion);
+                }
+                if(mesa == "Mesa 6")
+                {
+                    mesa6.push(reservasion);
+                }
             
-                let disponible = false;
-                for(let i = 0; i<estatus.length;i++){
-                    if(estatus[i] == Estatus){
-                    disponible = true;
-                    console.log("Esta reservacion ya existe")
-                    }
-                }
-                if(disponible == false){
-                    estatus.push(Estatus)
-                    console.log("Tu reservacion a sido registrada");
-                }
-
             }
-        
-            
-           
-       
+
+        }else{
+            alert("No tenemos tantas mesas")
+        }
+        return "Mesas registradas";   
     }
 
+    //Funcion para verificar la funcion y saber si la mesa realmente se encuentra disponible o utilizada
+    function verifiando() {
+        verificar = true;
+        if (verificar == mesa1.includes(Almacenamiento[0] )) {
+            console.log("mesa ocupada 1");
+            console.log(Almacenamiento[0]);
+        }
+        if (verificar == mesa2.includes(Almacenamiento[1] )) {
+            console.log("mesa ocupada 2");
+            console.log(Almacenamiento[1]);
+        }
+        if (verificar == mesa3.includes(Almacenamiento[2] )) {
+            console.log("mesa ocupada 3");
+            console.log(Almacenamiento[2]);
+        }
+        if (verificar == mesa4.includes(Almacenamiento[3] )) {
+            console.log("mesa ocupada 4");
+            console.log(Almacenamiento[3]);
+        }
+        if (verificar == mesa5.includes(Almacenamiento[4] )) {
+            console.log("mesa ocupada 5");
+            console.log(Almacenamiento[4]);
+        }
+        if (verificar == mesa6.includes(Almacenamiento[5] )) {
+            console.log("mesa ocupada 6");
+            console.log(Almacenamiento[5]);
+        }
+        return verificar;
+    }
+
+    //Funcion para poder hacer el almacenamiento de las mesas y darle sus reservaciones
+    function mesasfree(nombre,fecha,mesa) {
+            verificar = false;
+        if (verificar == mesa1.includes(Almacenamiento[0] )) {
+            console.log("mesa desocupada 1");
+        }
+        if (verificar == mesa2.includes(Almacenamiento[1] )) {
+            console.log("mesa desocupada 2");
+        }
+        if (verificar == mesa3.includes(Almacenamiento[2] )) {
+            console.log("mesa desocupada 3");
+        }
+        if (verificar == mesa4.includes(Almacenamiento[3] )) {
+            console.log("mesa desocupada 4");
+        }
+        if (verificar == mesa5.includes(Almacenamiento[4] )) {
+            console.log("mesa desocupada 5");
+        }
+        if (verificar == mesa6.includes(Almacenamiento[5] )) {
+            console.log("mesa desocupada 6");
+        }
+    }
+
+  //Funcion para poder detallar que mesa se encuentra reservada yq ue mesa se encuentra disponible
+    function ver() {
+    for(let i = 0; i < sinMesa.length; i++){
+            verificar = true;
+        if (verificar == mesa1.includes(sinMesa[0] )) {
+            console.log("mesa ocupada 1");
+        }
+        if (verificar == mesa2.includes(sinMesa[1] )) {
+            console.log("mesa ocupada 2");
+        }
+        if (verificar == mesa3.includes(sinMesa[2] )) {
+            console.log("mesa ocupada 3");
+        }
+        if (verificar == mesa4.includes(sinMesa[3] )) {
+            console.log("mesa ocupada 4");
+        }
+        if (verificar == mesa5.includes(sinMesa[4] )) {
+            console.log("mesa ocupada 5");
+        }
+        if (verificar == mesa6.includes(sinMesa[5] )) {
+            console.log("mesa ocupada 6");
+        }
+    }
+}
+
+//Funcion para poder darnos los datos de que mesas se encuentran almacenadas  y cuales disponibles
+
+    function mesasdisponibles() {
+        verificar = false;
+        if (verificar == mesa1.includes(Almacenamiento[0] )) {
+            console.log("mesa desocupada 1");
+        }else{
+            console.log("mesa ocupada 1");
+        }
+
+        if (verificar == mesa2.includes(Almacenamiento[1] )) {
+            console.log("mesa desocupada 2");
+        }else{
+            console.log("mesa ocupada 1");
+        }
+
+        if (verificar == mesa3.includes(Almacenamiento[2] )) {
+            console.log("mesa desocupada 3");
+        }else{
+            console.log("mesa ocupada 3");
+        }
+
+        if (verificar == mesa4.includes(Almacenamiento[3] )) {
+            console.log("mesa desocupada 4");
+        }else{
+            console.log("mesa ocupada 4");
+        }
+
+        if (verificar == mesa5.includes(Almacenamiento[4] )) {
+            console.log("mesa desocupada 5");
+        }else{
+            console.log("mesa ocupada 5");
+        }
+
+        if (verificar == mesa6.includes(Almacenamiento[5] )) {
+            console.log("mesa desocupada 6");
+        }else{
+            console.log("mesa ocupada 6");
+        }
+
+        return verificar;   
+    }
+
+    //Seccion de muestreo de menu para mandar a llamar las funciones
+
+    do{
+        opcion = parseInt(prompt("Que opcion escoges?\n1.-Realizar una reservacion\n2.-Mostrar reservaciones\n3.-Mostrar las mesas del dia"));
+    
+        switch (opcion) {
+            case 1:
+            mesasdisponibles();
+                var num_reservasiones = parseInt(prompt("que numero de mesas desea reservar "));
+                Registro();
+                break;
+            case 2:
+                verifiando();
+                break;
+                
+             case 3:
+                 mesasfree();
+                break;
+            default:
+                break;
+        }
+    }while(opcion != 0);
 </script>
+
+   
+    
+    
+   
+
 </html>
